@@ -1,54 +1,40 @@
+//TODO: Cleanup unused stuff.
 function computerPlay() {
-    let list = ["rock", "paper", "Scissors"];
+    let list = ["rock", "paper", "scissors"];
     let randomNumber = Math.floor(Math.random() * list.length);
-    let pick = list[randomNumber];
-    console.log("The computer selected: " + pick);
-    return pick;
+    let randomPick = list[randomNumber];
+    console.log("The computer selected: " + randomPick);
+    return randomPick;
 }
 
-let playerWins = "Player wins!";
-let computerWins = "Computer wins!";
-let equalGame = "You selected the same tool";
 let playerScore = 0;
 let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == "rock") {
-        if (computerSelection == "rock") {
-            return equalGame;
-        } else if (computerSelection == "paper") {
+        if (computerSelection == "paper") {
             computerScore++;
-            return computerWins;
         } else {
             playerScore++;
-            return playerWins;
         }
     }
     if (playerSelection == "paper") {
-        if (computerSelection == "paper") {
-            return equalGame;
-        } else if (computerSelection == "rock") {
+         if (computerSelection == "rock") {
             playerScore++;
-            return playerWins;
         } else {
             computerScore++;
-            return computerWins;
         }
     }
     if (playerSelection == "scissors") {
-        if (computerSelection == "scissors") {
-            return equalGame;
-        } else if (computerSelection == "rock") {
+        if (computerSelection == "rock") {
             computerScore++;
-            return computerWins;
         } else {
             playerScore++;
-            return playerWins;
         }
     }
 }
 
-function winner(computerScore, playerScore){
+function setWinner(computerScore, playerScore){
     if (computerScore > playerScore) {
         return "Computer is the winner. Try again!";
     } else if (computerScore < playerScore) {
@@ -70,7 +56,7 @@ function game(rounds) {
     }
     console.log("RESULT: ");
     console.log("Computer " + computerScore + " : " + playerScore + " Player");
-    console.log(winner(computerScore, playerScore));
+    console.log(setWinner(computerScore, playerScore));
     console.log("Thanks for playing!");
 }
 
