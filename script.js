@@ -54,7 +54,7 @@ function winner(computerScore, playerScore){
     } else if (computerScore < playerScore) {
         return "You won! Congrats!";
     } else {
-        return "Equal game. Maybe try another time?";
+        return "Equal game. Maybe try another time.";
     }
 }
 
