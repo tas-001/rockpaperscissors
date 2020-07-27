@@ -1,4 +1,3 @@
-//TODO: Cleanup unused stuff.
 function computerPlay() {
     let list = ["rock", "paper", "scissors"];
     let randomNumber = Math.floor(Math.random() * list.length);
